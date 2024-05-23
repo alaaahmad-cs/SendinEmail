@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<br></br>
+<div class ="container">
+
+<form action="{% url 'send' %}" method="post">
+  {% csrf_token %}
+    <div class="mb-3">
+      {{form.as_p}}
+      
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <br></br>
+    <hr>
+    <a href="{% url 'welcome' %}">Welcome page</a>
+  </form>
+  </div>
+{% endblock content %}
